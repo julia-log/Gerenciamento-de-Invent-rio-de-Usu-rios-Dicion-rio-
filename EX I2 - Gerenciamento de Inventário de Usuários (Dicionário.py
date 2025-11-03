@@ -1,11 +1,23 @@
-usuarios = {"id": 101, "perfil": "Analista", "status": "Ativos"}
+## 💻 Código do Exercício
 
-usuarios["ultimo_login"] = "2024-10-01"
+# I1 - Classificação de Risco de Vulnerabilidade
+cvss_score = 7.8
 
-tem_licenca = "licenca_premium" in usuarios
-print(f"Licença premium presente? {tem_licenca}")
+if cvss_score >= 9.0:
+    categoria = "Risco Crítico"
+    acao = "Ação imediata: aplicar patch de segurança urgente."
+elif cvss_score >= 7.0 and cvss_score < 9.0:
+    categoria = "Risco Alto"
+    acao = "Corrigir vulnerabilidade o quanto antes."
+elif cvss_score >= 4.0 and cvss_score < 7.0:
+    categoria = "Risco Médio"
+    acao = "Monitorar e planejar correção."
+else:
+    categoria = "Risco Baixo"
+    acao = "Sem necessidade imediata de ação."
 
-usuarios["status"] = "Inativo"
+print(f"Categoria: {categoria}")
+print(f"Recomendação: {acao}")
 
-print("Dicionário final:", usuarios)
+
 
